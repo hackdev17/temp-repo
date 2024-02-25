@@ -1,5 +1,5 @@
 CC=cc
-TMP=pdf iso tgz aux log toc fls fdb_latexmk xml out
+TMP=pdf iso tgz aux log toc fls fdb_latexmk xml out synctex.gz
 clean:
 	@echo "Removing compiled files ..."
 	@rm -rf *.bin
