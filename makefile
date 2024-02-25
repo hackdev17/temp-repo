@@ -1,5 +1,5 @@
 CC=cc
-TMP=pdf iso tgz aux log toc fls fdb_latexmk xml out synctex.gz
+TMP=iso tgz aux log toc fls fdb_latexmk xml out synctex.gz
 
 doc:
 	@latexmk -pdf -auxdir=tmp/ -shell-escape -cd Report.tex
