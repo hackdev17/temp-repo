@@ -10,6 +10,7 @@
 \usepackage{tikz}
 \usepackage{calc}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 
 % detailes
 \title{SOCIAL CONNECT RESPONSIBILITY REPORT}
@@ -19,86 +20,98 @@
 % presets
 \usetikzlibrary{shapes}
 \linespread{1.5}
-\pagestyle{empty}
+\pagestyle{fancy}
+
 \hypersetup{
 	colorlinks,
 	urlcolor={blue!80!black},
 	linkcolor=black
 }
 \urlstyle{same}
+\fancyhf{}
+\fancyhead[L]{\hrule \vspace{-1.25em} Social Connect and Responsibility (BSCK307) \vspace{.25em}}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{Department of Artificial Intelligence \& Machine Learning \vspace{-1.25em} \hrule}
 
 % commands
-\newcommand{\chapter}[1]{
-	\section*{#1}
-	\addcontentsline{toc}{section}{#1}
+\newcommand{\chapter}[2]{
+	\setcounter{section}{#1}
+	\setcounter{subsection}{0}
+	\begin{center}
+		\section*{Module #1 \\ #2}
+	\end{center}
+	\addcontentsline{toc}{section}{Module #1 \\ #2}
 }
 
 \newcommand{\img}[2]{\scalebox{#1}{\includegraphics{#2}}}
+\renewcommand{\headrulewidth}{2.5pt}
+\renewcommand{\footrulewidth}{2.5pt}
 
-\newcommand{\border}{
-	\tikz[overlay, remember picture]{
-		\draw ([shift={(.5in,-.5in)}]current page.north west)
-		rectangle ++ (\paperwidth-1in,-\paperheight+1in);
-	}
-}
+
+%\newcommand{\border}{
+%	\tikz[overlay, remember picture]{
+%		\draw ([shift={(.5in,-.5in)}]current page.north west)
+%		rectangle ++ (\paperwidth-1in,-\paperheight+1in);
+%	}
+%}
 
 \newcommand{\nborder}{
 	\tikz[overlay, remember picture]{
 		\draw ([shift={(.5in,-.5in)}]current page.north west)
 		rectangle ++ (\paperwidth-1in,-\paperheight+1in)
-		node[below left,yshift=-.5em]{
-			~~Social Connect and Responsibility (BSCK307) \hspace{22em} \thepage~~
+		node[below]{
+			\thepage \hspace{1.222225\columnwidth}
 		};
 	}
 }
 
-\newcommand{\rborder}{
-	\tikz[overlay, remember picture]{
-		\draw ([shift={(.5in,-.5in)}]current page.north west)
-		rectangle ++ (\paperwidth-1in,-\paperheight+1in)
-		node[below left,yshift=-.5em]{
-			~~Social Connect and Responsibility (BSCK307) \hspace{21em} (\thepage)~~
-		};
-	}
-}
+
+%\newcommand{\rborder}{
+%	\tikz[overlay, remember picture]{
+%		\draw ([shift={(.5in,-.5in)}]current page.north west)
+%		rectangle ++ (\paperwidth-1in,-\paperheight+1in)
+%		node[below left,yshift=-.5em]{
+%			~~Social Connect and Responsibility (BSCK307) \hspace{21em} (\thepage)~~
+%		};
+%	}
+%}
 
 \begin{document}
-	\pagenumbering{roman}
-	\maketitle \thispagestyle{empty} \border \newpage
+	\maketitle \thispagestyle{empty} \newpage
 
-	\setcounter{page}{1}
-	\rborder \vspace{-5em} \tableofcontents \thispagestyle{empty} \newpage
+	\pagenumbering{roman} \setcounter{page}{1} \nborder
+	\thispagestyle{empty} \vspace{-5em} \tableofcontents \thispagestyle{empty}
 
-	\thispagestyle{empty} \section*{References}
-	Mangifera indica \dotfill ~~\textbf{1} \\
+	\section*{References} \nborder
+	Mangifera indica \dotfill ~~ 1 \\
 	\indent Wikipedia : Mango\\
 	\indent\indent \url{https://simple.wikipedia.org/wiki/Mango} \\
-	Organic Farming \dotfill ~~\textbf{6} \\
+	Organic Farming \dotfill ~~ 6 \\
 	\indent Wikipedia : Organic farming\\
 	\indent\indent \url{https://en.wikipedia.org/wiki/Organic_farming}
 
 	\section*{List of Tables}
-	\noindent Biomass production \& Nutrient content of green manure crops \dotfill ~~\textbf{9} \\
-	Nutrient content of green manure crops \dotfill ~~\textbf{9} \\ ~ \rborder \newpage
-
+	\noindent Biomass production \& Nutrient content of green manure crops \dotfill ~~ 9 \\
+	Nutrient content of green manure crops \dotfill ~~ 9 \\ ~
+	\thispagestyle{empty} \newpage
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
-	\chapter{Module 1 $-$ PLANTATION AND ADOPTATION OF TREE}
-	\subsubsection{Introduction}
+	\chapter{1}{PLANTATION AND ADOPTATION OF TREE}
+	\subsection{Introduction}
 	\par Mangifera indica, commonly known as mango, is a species of flowering plant in the family Anacardiaceae. It is a large fruit tree, capable of growing to a height of 30 metres (100 feet). There are two distinct genetic populations in modern mangoes – the "Indian type" and the "Southeast Asian type".
 
-	\subsubsection{Fruit}
+	\subsection{Fruit}
 	It is irregular, egg-shaped fruit which is a fleshy drupe. Mangoes are typically 8–12 cm (3–5 in) long and greenish yellow in color. The fruits can be round, oval, heart, or kidney shaped.Mango fruits are green when they are unripe. The interior flesh is bright orange and soft with a large, flat pit in the middle.Mangoes are mature in April and May. The skin and pulp account for 85\% of the mango's weight, and the remaining 15\% comes from the seed
 
-	\subsubsection{Harvesting}
+	\subsection{Harvesting}
 	Red-yellow flowers appear at the end of winter, and also at the beginning of spring. Both male and female flowers are borne on same tree. Climatic conditions have a significant influence on the time of flowering. In South Asia, flowering starts in December in the south, in January in Bengal, in February in eastern Uttar Pradesh and Bihar, and in February–March in northern India. The duration of flowering is 20–25 days for the Dasheri variety, while panicle emergence occurs in early December and flower opening is completed by February. The Neelum variety produces two crops a year in Kanyakumari, Tamil Nadu, but it flowers only once in North Indian conditions.
-	\nborder
+
 	\begin{center}
-		\img{.95}{Plant/me_with_plant.jpg} \\ Mango grown for 2 months
+		\img{.7}{Plant/me_with_plant.jpg} \\ Mango grown for 2 months
 	\end{center} \newpage
 
-	\chapter{Module 2 $-$ HERITAGE WALK AND CRAFTS CORNER}
-	\subsection{PILIKULA VILLAGE NISARGADHAM} \nborder
+	\chapter{2}{HERITAGE WALK AND CRAFTS CORNER}
+	\subsection{PILIKULA VILLAGE NISARGADHAM}
 
 	\begin{center}
 		\img{.8}{Heritage/Plikula Village Nisargadham-2.jpg}
@@ -112,14 +125,14 @@
 	\par One of the traditional and hand-crafted processes of molding iron and steel to produce various domestic and agricultural equipment is Black Smithy. In this process, the metal is heated until it turns red and becomes soft enough, and is hammered to the desired shape.
 	The most significant art of Dakshina Kannada is stone carving and sculpturing. Rich in natural rocks and stones, the district uses granite, soapstone, slate, and black stone for sculpting and carving the idols of deities and Nagas. \\
 
-	\par \nborder Pilikula Nisargadham Village apart from the artisan village also consists of many other attractions like a boating center, a biological park, an arboretum, a science center, a water amusement park, and a golf course.
+	\par  Pilikula Nisargadham Village apart from the artisan village also consists of many other attractions like a boating center, a biological park, an arboretum, a science center, a water amusement park, and a golf course.
 
-	\subsubsection{Notable places of interest $-$ Guthu Mane}
+	\subsubsection{Notable places of interest \\ Guthu Mane}
 	\par An architectural marvel, Guthu Mane is a traditional house of the coastal landlords. As the landlords of the yester years are progressing or migrating to the city life, the legacy of traditional and cultural heritage homes is becoming extinct. Look for intricately carved interiors, wooden pillars, ancient furniture and artifacts, and brass and copper antiques and vessels which are noteworthy. A huge Guthu Mane is restored and reinstalled to educate the visitors about the tradition, heritage, and culture of the region. The house also exhibits the dance forms, traditional attire, and other forms of folk arts and folk sports like Kambala, Yakshagana, etc. \\
 
 	\par The architecture of these homes followed Vastu principles. Guthu houses look like a mini temple from the outside. Characterised by sloping roofs with Mangalore tiles and huge courtyards that overlook paddy fields, Guthu houses are a reminder of a bygone era. They symbolised the wealth and prestige of the wealthy landlords who built these houses. Exquisite care was taken to ensure that not only did Guthu houses evoke grandeur but were also built keeping in mind Mangalore’s often oppressive heat and humidity as a coastal region. \newpage
 
-	\par \nborder The open space in front of the house beyond the main gate, which was called jaal, would typically have a shelter made from woven dried coconut leaves that would serve as protection from the extreme heat. All Guthu houses had a veranda that acted as a sit-out and beautiful doors made from intricately carved teakwood or rosewood. Ornate and exquisitely carved wooden pillars adorned the interiors of the inner courtyard. These pillars upheld a decorated wooden ceiling, which usually had representations of mango and floral designs, foliage, and coin motifs. Solid wooden beams called jantis supported this grand ceiling.
+	\par  The open space in front of the house beyond the main gate, which was called jaal, would typically have a shelter made from woven dried coconut leaves that would serve as protection from the extreme heat. All Guthu houses had a veranda that acted as a sit-out and beautiful doors made from intricately carved teakwood or rosewood. Ornate and exquisitely carved wooden pillars adorned the interiors of the inner courtyard. These pillars upheld a decorated wooden ceiling, which usually had representations of mango and floral designs, foliage, and coin motifs. Solid wooden beams called jantis supported this grand ceiling.
 
 	\begin{center}
 		\img{.25}{Heritage/Interior-of-Guthu-Mane.jpg} ~ \img{.25}{Heritage/Ancient-Artefacts-at-Guthu-Mane-Pilikula.jpg} \vspace{.5em} \\ \img{.035}{Vishal_Akash.jpg} ~ \img{.03}{Shreyas_Sudhanva.jpg} \\
@@ -135,9 +148,9 @@
 		The wooden furniture
 	\end{center}
 
-	\par Guthu houses usually featured a lot of woodwork. Wooden swings where the head of the house sat, chests, cabinets, shelves, chairs, writing desks, reclining chairs and the quintessential vakil bench were all part of these homes. They all featured beautifully intricate carvings, which were sometimes inlaid with ivory. \nborder \newpage
+	\par Guthu houses usually featured a lot of woodwork. Wooden swings where the head of the house sat, chests, cabinets, shelves, chairs, writing desks, reclining chairs and the quintessential vakil bench were all part of these homes. They all featured beautifully intricate carvings, which were sometimes inlaid with ivory.  \newpage
 
-	\chapter{Module 3 $-$ ORGANIC FARMING AND WASTE MANAGEMENT}
+	\chapter{3}{ORGANIC FARMING AND WASTE MANAGEMENT}
 
 	\subsection{Organic Farming}
 	\par Organic farming is a holistic approach to agriculture that prioritizes environmental sustainability, biodiversity conservation, and the health of ecosystems, consumers, and farmers alike. Unlike conventional farming, which relies heavily on synthetic pesticides, fertilizers, and genetically modified organisms (GMOs), organic farming emphasizes natural and traditional methods to cultivate crops and raise livestock. \\
@@ -151,7 +164,7 @@
 		Organic farming promotes biodiversity by creating diverse ecosystems within and around farms. This includes planting a variety of crops, preserving natural habitats, and avoiding the use of synthetic chemicals that can harm beneficial insects, birds, and other wildlife.
 
 		\item \textbf{Chemical-Free Pest and Weed Management} \\
-		Instead of relying on synthetic pesticides and herbicides, organic farmers employ techniques such as crop rotation, natural predators, mechanical cultivation, and mulching to manage pests and weeds. These methods reduce chemical exposure for farmers and consumers while maintaining ecological balance. \nborder \newpage
+		Instead of relying on synthetic pesticides and herbicides, organic farmers employ techniques such as crop rotation, natural predators, mechanical cultivation, and mulching to manage pests and weeds. These methods reduce chemical exposure for farmers and consumers while maintaining ecological balance.  \newpage
 
 		\item \textbf{Animal Welfare} \\
 		In organic livestock farming, animals are treated with care and respect. They have access to outdoor areas for grazing and exercise, and their diets are free from synthetic hormones and antibiotics. Organic standards also prohibit the use of genetically modified feed.
@@ -172,7 +185,7 @@
 		Organic farming can provide economic opportunities for small-scale farmers and rural communities. By fostering local food systems and direct marketing channels, organic agriculture strengthens local economies and enhances food security.
 	\end{enumerate}
 
-	\par In conclusion, organic farming offers a sustainable alternative to conventional agriculture that prioritizes ecological integrity, human health, and social equity. By embracing organic practices and supporting organic producers, individuals can contribute to building a more resilient and regenerative food system for future generations. \nborder \newpage
+	\par In conclusion, organic farming offers a sustainable alternative to conventional agriculture that prioritizes ecological integrity, human health, and social equity. By embracing organic practices and supporting organic producers, individuals can contribute to building a more resilient and regenerative food system for future generations.  \newpage
 
 	\subsubsection{Need}
 	\begin{itemize}
@@ -200,7 +213,7 @@
 		\end{itemize}
 		\item The plants that are grown for green manure known as green manure crops.
 		\item The most important green \textit{manurecrops} are \textit{sunnhemp}, \textit{dhaincha}, \textit{pillipesara}, clusterbeansand \textit{Sesbania rostrata}.
-	\end{itemize} \nborder \newpage
+	\end{itemize}  \newpage
 
 	\begin{center}
 		\begin{tabular}{|l|c|c|c|} \hline
@@ -230,12 +243,12 @@
 		\item Crop production with the use of alternative sources of nutrients such as crop rotation, residue management, organic manures and biological inputs.
 		\item Management of weeds and pests by better management practices, physical and cultural means and by biological control system
 		\item Maintenance of live stock in tandem with organic concept and make them an integral part of the entire system
-	\end{enumerate} \nborder \newpage
+	\end{enumerate}  \newpage
 
 	\subsection{Dry Waste management}
 	\par Dry waste refers to any waste that does not decompose or decay easily and typically does not contain moisture. This category of waste includes materials such as plastics, metals, glass, paper, cardboard, and textiles. Dry waste is often generated from households, businesses, industries, and institutions. It is distinct from wet waste, which includes organic materials like food scraps and yard waste. \\
 
-	\par Managing dry waste is crucial for environmental sustainability as improper disposal can lead to pollution, habitat destruction, and resource depletion. Recycling, reusing, and reducing dry waste are key strategies to mitigate its impact. Recycling facilities sort and process dry waste materials to produce new products, conserving resources and reducing the need for raw materials extraction. Reusing items such as glass jars, metal containers, and cloth bags helps minimize the generation of new waste. Additionally, reducing consumption and opting for eco-friendly alternatives can help lessen the overall amount of dry waste generated. Proper waste management practices, including segregation, collection, transportation, and disposal, are essential to ensure the responsible handling of dry waste and its sustainable management. \nborder \newpage
+	\par Managing dry waste is crucial for environmental sustainability as improper disposal can lead to pollution, habitat destruction, and resource depletion. Recycling, reusing, and reducing dry waste are key strategies to mitigate its impact. Recycling facilities sort and process dry waste materials to produce new products, conserving resources and reducing the need for raw materials extraction. Reusing items such as glass jars, metal containers, and cloth bags helps minimize the generation of new waste. Additionally, reducing consumption and opting for eco-friendly alternatives can help lessen the overall amount of dry waste generated. Proper waste management practices, including segregation, collection, transportation, and disposal, are essential to ensure the responsible handling of dry waste and its sustainable management.  \newpage
 
 	\subsubsection{Utilizing Waste Newspaper for Flower Pot Creation}
 	\begin{center}
@@ -254,7 +267,7 @@
 		Wrap the strips around a mold (e.g, a bottle or a can) to create the desired pot shape.
 		\item \textbf{Adhesion} \\
 		Apply a natural adhesive like flour paste or starch to secure the layers.
-		\nborder \newpage
+		 \newpage
 		\item \textbf{Drying} \\
 		Allow the pot to dry thoroughly, either naturally or using gentle heat.
 	\end{enumerate}
@@ -275,7 +288,7 @@
 		These pots can be crafted in various shapes and sizes to suit different plant types and aesthetics.
 		\item \textbf{Educational Value} \\
 		Making newspaper pots can be an educational activity for children, teaching them about recycling and sustainability.
-	\end{enumerate} \nborder \newpage
+	\end{enumerate}  \newpage
 
 	\noindent \textbf{Implications and Challenges}
 	\begin{enumerate}[label=\textbf{\arabic*.}]
@@ -293,9 +306,9 @@
 		\img{.065}{Waste/Gift.jpg} \\ \textbf{Paper Flower Pot give away}
 	\end{center}
 
-	\nborder \newpage
+	 \newpage
 
-	\chapter{Module 4 $-$ WATER CONSERVATION}
+	\chapter{4}{WATER CONSERVATION}
 	\subsection{Water Conservation}
 	\par Water conservation refers to the responsible management and efficient use of water resources to ensure their sustainability for current and future generations. It involves reducing water wastage, promoting water-saving technologies, and adopting practices that help preserve freshwater supplies. \\
 
@@ -315,7 +328,7 @@
 
 		\item \textbf{Infrastructure Improvements} \\
 		Investing in water infrastructure upgrades and repairs to minimize leaks and losses in distribution systems.
-		\nborder \newpage
+		 \newpage
 		\item \textbf{Policy and Regulation} \\
 		Implementing water conservation policies, regulations, and incentives at the local, regional, and national levels to promote responsible water use and discourage wasteful practices.
 
@@ -326,7 +339,7 @@
 		Encouraging industries to adopt water-saving technologies and practices in their operations, such as recycling process water and implementing water-efficient manufacturing processes.
 	\end{enumerate}
 
-	\par Water conservation is crucial for mitigating water scarcity, protecting ecosystems, and ensuring equitable access to clean water for all. By implementing effective water conservation measures, individuals, communities, and governments can contribute to the sustainable management of water resources and build a more resilient future in the face of growing water challenges. \nborder \newpage
+	\par Water conservation is crucial for mitigating water scarcity, protecting ecosystems, and ensuring equitable access to clean water for all. By implementing effective water conservation measures, individuals, communities, and governments can contribute to the sustainable management of water resources and build a more resilient future in the face of growing water challenges.  \newpage
 
 	\subsection{Rain Water Harvesting}
 	\par Water conservation in villages through rainwater harvesting is a vital strategy to address water scarcity and improve access to clean water in rural areas. Rainwater harvesting involves capturing and storing rainwater for later use, reducing reliance on unsustainable groundwater sources and enhancing water resilience in communities.
@@ -348,7 +361,7 @@
 
 		\item \textbf{Farm-level Rainwater Harvesting} \\
 		Implementing techniques such as contour farming, micro-catchments, and farm ponds to capture and store rainwater for agricultural purposes, enhancing crop yields and livelihoods while conserving water.
-		\nborder \newpage
+		 \newpage
 		\item \textbf{Awareness and Capacity Building} \\
 		Educating villagers about the benefits of rainwater harvesting and providing training on how to design, build, and maintain rainwater harvesting systems effectively.
 
@@ -368,7 +381,7 @@
 		Rainwater harvesting projects can contribute to community development by improving access to clean water, enhancing agricultural productivity, and supporting livelihoods, particularly in rural areas.
 		\item \textbf{Climate Resilience} \\
 		It enhances climate resilience by capturing and storing rainwater during wet periods for use during dry spells, thus helping communities adapt to changing weather patterns and extremes.
-	\end{enumerate} \nborder \newpage
+	\end{enumerate}  \newpage
 
 	\subsubsection{Dimensions}
 	\begin{enumerate}[label=\textbf{\arabic*.}]
@@ -389,7 +402,7 @@
 
 		\item \textbf{Operation and Maintenance} \\
 		Ongoing costs include maintenance activities such as cleaning filters, repairing leaks, and replacing worn-out components. These costs are typically lower than initial investment costs but should be budgeted for to ensure the long-term functionality and sustainability of the system.
-		\nborder \newpage
+		 \newpage
 		\item \textbf{Cost-Benefit Analysis} \\
 		Conducting a cost-benefit analysis can help assess the financial viability of rainwater harvesting projects by comparing the upfront costs with the potential savings or benefits achieved over time, such as reduced water bills, increased crop yields, and improved water security.
 	\end{enumerate}
@@ -409,7 +422,7 @@
 		Rainwater harvesting promotes environmental conservation by replenishing groundwater, reducing soil erosion, and supporting local ecosystems. Recharging aquifers and maintaining natural water cycles are critical for sustaining biodiversity and ecosystem services.
 	\end{enumerate}
 
-	\par Overall, rainwater harvesting has the potential to benefit a wide range of stakeholders, from individual households to entire ecosystems, by improving water security, enhancing livelihoods, and promoting environmental sustainability. \nborder \newpage
+	\par Overall, rainwater harvesting has the potential to benefit a wide range of stakeholders, from individual households to entire ecosystems, by improving water security, enhancing livelihoods, and promoting environmental sustainability.  \newpage
 
 	\subsubsection{Implementation of the Scheme}
 	\par Implementing rainwater harvesting involves several steps and considerations to ensure its effectiveness and sustainability. Here's an overview of the implementation process:
@@ -431,7 +444,7 @@
 			Develop a customized rainwater harvesting system design based on the site assessment, water demand analysis, and regulatory requirements. Consider factors such as catchment area, rainfall intensity, storage capacity, and treatment needs.
 			\item \textbf{Component Selection} \\
 			Select appropriate components for the rainwater harvesting system, including roof catchment surfaces, gutters, downspouts, filtration systems, storage tanks, distribution pipes, and overflow controls.
-			\nborder \newpage
+			 \newpage
 			\item \textbf{Engineering Specifications} \\
 			Prepare detailed engineering specifications, drawings, and plans for the construction and installation of the rainwater harvesting system, ensuring compliance with technical standards and safety regulations.
 		\end{itemize}
@@ -452,7 +465,7 @@
 			Provide training and capacity building to end-users and stakeholders on the operation, maintenance, and management of the rainwater harvesting system, including monitoring water quality, inspecting components, and troubleshooting common issues.
 			\item \textbf{Regular Maintenance} \\
 			Establish a routine maintenance schedule for inspecting, cleaning, and servicing the rainwater harvesting system to ensure optimal performance and longevity. Tasks may include cleaning gutters, checking for leaks, flushing tanks, and replacing filters or damaged components.
-			\nborder \newpage
+			 \newpage
 			\item \textbf{Record Keeping} \\
 			Maintain accurate records of maintenance activities, water usage, and system performance to track effectiveness, identify trends, and inform future decision-making.
 		\end{itemize}
@@ -476,9 +489,9 @@
 
 	\par By following a systematic approach to implementation, rainwater harvesting projects can effectively harness rainwater resources, improve water security, and enhance resilience in communities while contributing to environmental sustainability and socio-economic development.
 
-	\nborder \newpage
+	 \newpage
 
-	\chapter{Module 5 $-$ FOOD WALK}
+	\chapter{5}{FOOD WALK}
 	\subsection{Regional foods of Karnataka}
 	\subsubsection{Mundakki Upkari}
 	\par Mundakki upkari is a simple dish that takes just 10 minutes to make. In the coastal areas of Kundapur, Udupi, and Mangalore, mundakki upkari is cooked in this manner.
@@ -495,7 +508,7 @@
 		\item 1 tblsp. red pepper flakes
 		\item 1 tbsp. rasam powder
 		\item 2 tablespoons fresh corriander, coarsely chopped season with salt to taste
-		\nborder \newpage
+		 \newpage
 		\item 4 tblsp. coconut oil
 		\item 1 medium-sized peeled and shredded carrot
 		\item 2 tablespoons raw mango grated (optional)
@@ -508,9 +521,9 @@
 		\item Puffed rice, salt, red chili powder, and rasam powder should all be combined in a mixing dish.
 		\item Mix in the coconut oil until the powders are evenly distributed throughout the puffed rice.
 		\item On a dish, place this spicy puffed rice. Mix well with finely chopped tomato, finely chopped onions, peeled, grated carrot, finely chopped fresh coriander, and lemon juice.
-	\end{itemize} \nborder \newpage
+	\end{itemize}  \newpage
 
-	\nborder
+
 	\subsubsection{Pankam}
 	\par Panakam is a Sanskrit word that translates to a “sweet drink”. In the simplest and the most traditional form it is simply water sweetened with jaggery, flavoured with crushed cardamoms and spiced with ground black pepper. This basic drink is known as Panakam in Telugu, Panaka in Kannada and Panagam in Tamil.
 
@@ -529,8 +542,26 @@
 
 	\noindent \vspace{1em} \textbf{Time to prepare : 1 minute} \\ ~ \\
 	\textbf{Method of Preparation}
-	\begin{enumerate}[label=\textbf{\arabic*.}]
+	\begin{itemize}
 		\item  Mix jaggery and water and stir till jaggery melts. Strain to remove impurities.
 		\item  Add cardamom, ginger powder and crushed pepper.
-	\end{enumerate}
+	\end{itemize} \newpage
+
+	\begin{center}
+		\section*{CONCLUSION}
+	\end{center} \addcontentsline{toc}{section}{CONCLUSION}
+	\par VIEWS encourage civil societies and corporate to invest in Social Responsibility (SSR) concept to promote SSR chapters at management and engineering college level.
+	There is conformity on the possibilities of the activity become self-sustainable because the establishment of the SSR chapters has been federated and registered under Indian Trust Act as SSR Forum.
+	Once the funding over, every year the chapters will design projects in collaboration with NGO partners and conduct fund raising activities at campus, funding agencies, government and other corporate sectors under the SSR network with technical support from VIEWS and plans to replicate/scale the model in other educational institutional also. \\
+
+	\par Along with, the exposure to development sector creates job opportunities to youth to work in development sector to work as a change agents.
+	VIEWS will work with the students of academic institutions by using self development and introspection as a tools for building confidence and empowering the individual. \\
+
+	\par Linked as part of a state level network, these SSR chapters will undertake a common learning journey that enhances their skills in leadership, inter-cultural awareness and project management.
+	The involvement of youth activists will itself inspire their peers.
+	Since the program would be a voluntary effort, the right spirit will be sufficient to get the youths to continue the work.
+	The SSR Network will design a website and create a student resource center for community development activities. \\
+
+	\par All the success stores and issues will uploaded in social network and quarterly news letter will be designed and send to all the stakeholders for exchange information and strengthening the program.
+	After successful implementation of this program, the SSR concept will be replicated and scaled in other academic institutions at state level.
 \end{document}

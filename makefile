@@ -3,7 +3,7 @@ TMP=iso tgz aux log toc fls fdb_latexmk xml out synctex.gz
 
 doc:
 	@latexmk -pdf -auxdir=tmp/ -shell-escape -cd Report.tex
-	@libreoffice --convert-to pdf front_page.docx
+	@libreoffice --convert-to pdf front_page.odt
 	@gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=SC-Report.pdf -dBATCH front_page.pdf Report.pdf
 
 clean:
